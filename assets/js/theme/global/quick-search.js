@@ -12,7 +12,7 @@ export default function () {
     const stencilDropDownExtendables = {
         hide: () => {
             $quickSearchExpand.attr('aria-expanded', false);
-            $searchQuery.trigger('blur');
+            // $searchQuery.trigger('blur');
         },
         show: (event) => {
             $quickSearchExpand.attr('aria-expanded', true);
@@ -29,6 +29,8 @@ export default function () {
         // any modification to the background element.
         if ($(e.target).closest('[data-prevent-quick-search-close], .modal-background').length === 0) {
             stencilDropDown.hide($container);
+            $quickSearchResults.html('')
+
         }
     };
 

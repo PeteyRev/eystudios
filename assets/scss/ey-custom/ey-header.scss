@@ -1,0 +1,156 @@
+.header {
+    border-bottom: none;
+}
+
+.navUser-action {
+    font-weight: 400;
+    text-transform: initial;
+}
+
+.navUser {
+    padding: 0;
+}
+
+.ey-header-container {
+    z-index: 11111;
+}
+
+#cart-preview-dropdown {
+    max-width: 420px;
+    background-color: $color-white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    z-index: 1;
+}
+
+.ey-store-logo {
+    text-align: center;
+
+    .header-logo__link {
+        top: -1rem;
+    }
+}
+
+.ey-header-middle {
+    display: flex;
+    justify-content: space-between;
+
+    .ey-header-col {
+        width: 33.33333%;
+    }
+
+}
+
+.navUser-action.ey-cart-link {
+    padding-top: 0;
+}
+
+.ey-header-search {
+    .form {
+        margin-bottom: 0;
+    }
+
+    .form-field {
+        margin-bottom: 0;
+    }
+
+    .form-fieldset {
+        max-width: 340px;
+    }
+
+    .icon.ey-icon {
+        bottom: 33px;
+        width: 1.2rem;
+        height: 1.2rem;
+        position: absolute;
+    }
+
+
+    .form-input {
+        border: none;
+        border-bottom: 1px solid $color-primaryDark;
+        border-radius: 0px;
+    }
+
+    input.button {
+        margin-left: 0;
+        border-radius: 0;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .form-prefixPostfix.wrap {
+        flex-wrap: nowrap;
+    }
+
+    .button.button--primary.button--small.form-prefixPostfix-button--postfix {
+        background-color: $color-grey;
+        border-color: $color-grey;
+    }
+}
+
+.ey-header-cart {
+    text-align: right;
+}
+
+.navPages-container {
+    border-top: 1px solid $color-primaryDark
+}
+
+.navPages-action {
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+
+    &:hover {
+        background-color: $color-grey;
+        color: $color-white;
+    }
+}
+
+.countPill {
+    background-color: $color-error;
+    position: relative;
+    z-index: 1;
+}
+
+.quickSearchResults {
+    position: absolute;
+    margin: 0;
+}
+
+.ey-cart-sides {
+    display: flex;
+    justify-content: flex-end;
+
+    >div {
+        &:first-child {
+            margin-right: 1rem;
+        }
+
+        span {
+            display: block;
+        }
+    }
+}
+
+.navUser-item-cartLabel {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-black;
+}
+
+.ey-cart-total {
+    color: $color-error;
+    font-weight: bold;
+}
+
+.icon.ey-icon.ey-cart-icon {
+    position: relative;
+    top: -.5rem;
+    left: -.3rem;
+    width: 1.7rem;
+    height: 2rem;
+
+    svg {
+        fill: $color-black;
+    }
+}
