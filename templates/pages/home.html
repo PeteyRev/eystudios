@@ -25,7 +25,26 @@ blog:
         {{> components/common/alert/alert-info message}}
     {{/each}}
 
-<div class="main full">
+<div class="main full ">
+    <div class="ey-home-categories">
+        {{#each categories}}
+            {{#if @index '<' '3'}}
+                <div class="ey-category-col">
+                    <div class="ey-col-img">
+                        {{> components/common/responsive-img
+                        image=image
+                        lazyload=theme_settings.lazyload_mode
+                        class="ey-category-img"
+                    }}
+                    </div>
+                    <div class="ey-col-content">
+                        <div class="button button--primary button--large">{{name}}</div>
+                    </div>
+                </div>
+            {{/if}}
+        {{/each}}
+    </div>
+
     {{#if products.featured}}
         {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
     {{/if}}
@@ -40,6 +59,7 @@ blog:
         {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
     {{/if}}
     {{{region name="home_below_new_products"}}}
+{{> ey-custom/ey-home-sections}}
 </div>
 {{/partial}}
 {{> layout/base}}

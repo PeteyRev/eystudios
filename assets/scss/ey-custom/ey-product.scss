@@ -1,0 +1,44 @@
+.card-title {
+    font-size: 16px;
+    margin: 0 0 0.25rem;
+    font-weight: 400;
+
+    a {
+        color: $color-black;
+    }
+}
+
+.price-section {
+    font-size: 20px;
+    font-weight: 600;
+    color: $color-black;
+}
+
+.ey-card-content {
+    display: flex;
+    margin-bottom: .6rem;
+
+    >div {
+        align-self: center;
+    }
+}
+
+.sale-flag-side {
+    position: relative;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0 .5rem 0 0;
+    height: auto;
+    line-height: auto;
+}
+
+.card {
+    .price-section.price-section--withoutTax.non-sale-price--withoutTax {
+        display: none;
+    }
+}
+
+.ey-category-img {
+    width: 100%;
+}

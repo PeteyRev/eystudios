@@ -1,0 +1,104 @@
+<nav class="navUser">
+    <ul class="navUser-section">
+        <li class="navUser-item">
+            <a class="navUser-action" tel="{{settings.phone_number}}">
+                CALL {{settings.phone_number}}
+            </a>
+        </li>
+        {{#if currency_selector.currencies.length '>' 1}}
+            <li class="navUser-item">
+                <a class="navUser-action navUser-action--currencySelector has-dropdown" href="#"
+                    data-dropdown="currencySelection" aria-controls="currencySelection" aria-expanded="false">
+                    {{lang 'common.currency' code=currency_selector.active_currency_code}}
+                    <i class="icon" aria-hidden="true">
+                        <svg>
+                            <use xlink:href="#icon-chevron-down" />
+                        </svg>
+                    </i>
+                </a>
+                <ul class="dropdown-menu" id="currencySelection" data-dropdown-content aria-hidden="true" tabindex="-1">
+                    {{#each currency_selector.currencies}}
+                        <li class="dropdown-menu-item">
+                            <a href="{{{switch_url}}}" data-currency-code="{{{code}}}" {{#if
+                                cart_currency_switch_url.length '>' 0 }}
+                                data-cart-currency-switch-url="{{{cart_currency_switch_url}}}" {{/if}}
+                                data-warning="{{lang 'common.currency_switch_promotion'}}">
+                                {{#if is_active}}
+                                    <strong>{{name}}</strong>
+                                {{else}}
+                                    {{name}}
+                                {{/if}}
+                            </a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </li>
+        {{/if}}
+    </ul>
+    <ul class="navUser-section navUser-section--alt">
+        {{#if customer.store_credit.value '>' 0}}
+            <li class="navUser-item">
+                <a class="navUser-action navUser-action--storeCredit" data-dropdown="storeCredit-dropdown"
+                    data-options="align:bottom" href="{{urls.cart}}"
+                    aria-label="{{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}">
+                    <span class="navUser-action-divider">
+                        {{lang 'common.store_credit_overview' credit=customer.store_credit.formatted}}
+                    </span>
+                </a>
+                <div class="dropdown-menu" id="storeCredit-dropdown" data-dropdown-content aria-hidden="true">
+                    {{{lang 'common.store_credit' store_credit=customer.store_credit.formatted}}}
+                </div>
+            </li>
+        {{/if}}
+        <li class="navUser-item">
+            <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav
+                aria-label="{{lang 'common.compare'}}">
+                {{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span>
+            </a>
+        </li>
+        {{#if theme_settings.social_icon_placement_top}}
+            <li class="navUser-item navUser-item--social">
+                {{> components/common/social-links}}
+            </li>
+            <li class="navUser-item navUser-item--divider">|</li>
+        {{/if}}
+        {{#if settings.gift_certificates_enabled}}
+            <li class="navUser-item">
+                <a class="navUser-action" href="{{urls.gift_certificate.purchase}}"
+                    aria-label="{{lang 'common.gift_cert'}}">
+                    {{lang 'common.gift_cert'}}
+                </a>
+            </li>
+        {{/if}}
+        <li class="navUser-item">
+            <a class="navUser-action navUser-item--compare" href="{{urls.compare}}" data-compare-nav
+                aria-label="{{lang 'common.compare'}}">
+                {{lang 'common.compare'}} <span class="countPill countPill--positive countPill--alt"></span>
+            </a>
+        </li>
+        <li class="navUser-item">
+            <a class="navUser-action" href="/">
+                Sponsored Owners
+            </a>
+        </li>
+        <li class="navUser-item">
+            <a class="navUser-action" href="/contact-us">
+                Contact Us
+            </a>
+        </li>
+        <li class="navUser-item navUser-item--account">
+            {{#if customer}}
+                <a class="navUser-action" href="{{urls.account.index}}" aria-label="{{lang 'common.account'}}">
+                    {{lang 'common.account'}}
+                </a>
+                <a class="navUser-action" href="{{urls.auth.logout}}" aria-label="{{lang 'common.logout'}}">
+                    {{lang 'common.logout'}}
+                </a>
+            {{else}}
+                <a class="navUser-action" href="{{urls.auth.login}}" aria-label="{{lang 'common.login'}}">
+                    {{lang 'common.account'}}
+                </a>
+            {{/if}}
+        </li>
+    </ul>
+</nav>

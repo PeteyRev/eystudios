@@ -1,0 +1,68 @@
+.ey-home-categories {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 5rem;
+
+    .ey-category-col {
+        width: 100%;
+        padding: 1.5rem;
+
+        @include breakpoint("medium") {
+            width: 50%;
+        }
+
+        @include breakpoint("large") {
+            width: 33.33333%;
+        }
+    }
+
+    .ey-col-content {
+        text-align: center;
+        margin-top: 1.5rem;
+    }
+}
+
+.heroCarousel-content {
+    background-color: transparent;
+
+    @include breakpoint("medium") {
+        text-align: left;
+    }
+}
+
+.heroCarousel-title {
+    font-size: 38px;
+    font-weight: 900;
+}
+
+.heroCarousel-description {
+    font-size: 22px;
+}
+
+.body.default {
+    .page-heading {
+        margin: 30px 0 1rem;
+        position: relative;
+        text-align: center;
+        z-index: 1;
+        font-weight: 400;
+
+        &:before {
+            border-top: 1px solid $color-grey;
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 25px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 95%;
+            z-index: -1;
+        }
+
+        span {
+            background: $color-white;
+            padding: 0 2rem;
+        }
+    }
+}
